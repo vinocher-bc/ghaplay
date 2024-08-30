@@ -35,4 +35,5 @@ jobs:
         shell: pwsh
         run: |
           echo "cache hit: ${{ steps.check_cache.outputs.cache-hit }}"
+          echo "All outputs: ${{ toJson(steps.check_cache.outputs) }}"
   
