@@ -24,7 +24,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Check GitHub Cache
-        uses: actions/cache/restore@v4.0.2
+        uses: actions/cache/restore@8addae5ffffa871c88fbd2d8a9a43af45f069161
         id: check_cache
         with:
           key: "foo"
