@@ -38,7 +38,7 @@ jobs:
           echo "All outputs: ${{ toJson(steps.check_cache.outputs) }}"
 
       - name: Debug Cache Conditional
-        if: ${{ steps.check_swiftwinrt_cache.outputs.cache-hit == 'false' }}
+        if: ${{ steps.check_swiftwinrt_cache.outputs.cache-hit == false }}
         shell: pwsh
         run: |
           echo "cache hit is false"
