@@ -23,6 +23,13 @@ jobs:
     name: Test Cache & Upload
     runs-on: windows-latest
     steps:
+      - name: Pwsh test
+        shell: pwsh
+        run: |
+          $MyArch = "amd64"
+          $InstallerArch = if ($MyArch -eq "amd64")  { "x64" } else { $MyArch }
+          Write-Host "installer_arch=$InstallerArch"
+      
       - name: Check GitHub Cache
         uses: actions/cache/restore@8addae5ffffa871c88fbd2d8a9a43af45f069161
         id: check_cache
